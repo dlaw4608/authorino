@@ -92,6 +92,12 @@ endef
 
 ##@ Development
 
+.PHONY: remove-authorino-crd
+
+remove-authorino-crd: ## Removes the Authorino CRD from the Kubernetes cluster
+	kubectl delete crd authconfigs.authorino.kuadrant.io
+
+
 .PHONY: vendor fmt vet generate manifests run build test benchmarks cover e2e docker-build
 
 vendor: ## Downloads vendor dependencies
